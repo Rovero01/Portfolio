@@ -345,7 +345,7 @@ export default function ContentV2({ open }) {
           <div className="flex flex-col items-center text-gray-500">
             <span className="text-5xl font-semibold text-white">Open Source</span>
             <span className="mt-5">This Portofolio is open source and deployed by open source software.</span>
-            <span>The code available on <span onClick={()=> window.open('https://github.com/Rovero01/Portofolio', '_blank') } className="cursor-pointer border-b border-gray-500 hover:border-white hover:text-white">GitHub</span></span>
+            <span>The code available on <span onClick={()=> window.open('https://github.com/Rovero01/Portfolio', '_blank') } className="cursor-pointer border-b border-gray-500 hover:border-white hover:text-white">GitHub</span></span>
           </div>
 
         </div>,
