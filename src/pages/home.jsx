@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import Topbar from "./topbar";
-import Opener from "./opener";
-import Content from "./content";
 import ContentV2 from "./content_v2";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const [target, setTarget] = useState('');
 
   const handleScroll = () => {
     const newScrollYPosition = window.pageYOffset;
@@ -45,8 +44,8 @@ export default function Home() {
         {/* <div id="main" className="z-0"></div> */}
             {/* <Opener open={open} /> */}
             {/* <div className="sticky top-0 z-40 "><Topbar open={open} /></div> */}
-            <Topbar open={open} />
-            <div className="z-10 pb-40"> <ContentV2 open={open} /> </div>
+           <div className="top-0 sticky z-20"> <Topbar trigger={(input)=> setTarget(input)} /></div>
+            <div className="z-10 pb-40"> <ContentV2 target={target} open={open} /> </div>
     
     </div>
   );

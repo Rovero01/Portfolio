@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect} from "react";
 import sjw from "../Assets/jpg/sjw.png";
 
 import "./content.css";
@@ -6,7 +6,7 @@ import eCommercePage from "../components/eCommerce";
 import healthCare from "../components/healthCare";
 import teleComunication from "../components/teleComunication";
 import { MdComputer, MdLocationPin } from "react-icons/md";
-import { FaReact, FaDatabase , FaShieldAlt  } from "react-icons/fa";
+import { FaReact, FaDatabase , FaShieldAlt,FaInstagram   } from "react-icons/fa";
 import { GiCurlyWing } from "react-icons/gi";
 import myFavorite from "../Assets/svg/MyFavorite.svg";
 import listTools from "../Assets/svg/ListTools.svg";
@@ -18,7 +18,7 @@ import { RiFirebaseFill } from "react-icons/ri";
 
 
 
-export default function ContentV2({ open }) {
+export default function ContentV2({ open, target }) {
   
   let [feature, setFeature] = useState({
     morewords: false,
@@ -26,6 +26,17 @@ export default function ContentV2({ open }) {
     project: 0,
     border: true,
   });
+
+  const about= useRef(null)
+  const exp= useRef(null)
+  const work= useRef(null)
+
+  useEffect(()=>{
+    if(target === 'about') about.current?.scrollIntoView({ behavior: 'smooth' });
+    if(target === 'exp') exp.current?.scrollIntoView({ behavior: 'smooth' });
+    if(target === 'work') work.current?.scrollIntoView({ behavior: 'smooth' });
+  },[target])
+
 
   let [title, setTitle] = useState(0);
 
@@ -50,7 +61,7 @@ export default function ContentV2({ open }) {
     ]]
 
   function tipBorder(input) {
-    let sameClass =
+    const sameClass =
       "absolute w-4 h-4 border-t border-r border-l border-gray-700 bg-[#201E38] opacity-60 rounded-sm shadow-md shadow-gray-8 00";
     return input ? (
       <>
@@ -125,11 +136,10 @@ export default function ContentV2({ open }) {
           {/* section 2 */}
 
           <div className="flex gap-5 mt-5 pb-10">
-            <div className="cursor-pointer hover:bg-gray-200 font-medium  py-3 px-5 border bg-white text-gray-500 rounded-xl text-sm border-gray-600">
+            <div onClick={()=> window.open(process.env.REACT_APP_LINKEDIN_LINK, '_blank') } className="cursor-pointer hover:bg-gray-200 font-medium  py-3 px-5 border bg-white text-gray-500 rounded-xl text-sm border-gray-600">
               See on Linkedin
             </div>
-            <div className="cursor-pointer hover:bg-gray-800 font-medium  py-3 px-5 border bg-[#121120] text-white rounded-xl text-sm border-gray-600">
-              {" "}
+            <div onClick={()=> window.open(process.env.REACT_APP_GITHUB_LINK, '_blank') } className="cursor-pointer hover:bg-gray-800 font-medium  py-3 px-5 border bg-[#121120] text-white rounded-xl text-sm border-gray-600">
               Github
             </div>
           </div>
@@ -141,7 +151,7 @@ export default function ContentV2({ open }) {
 
       {generateSameDiv(
         <div className="flex">
-          <div className="flex my-10 justify-center w-1/2">
+          <div onClick={()=> window.open(process.env.REACT_APP_BEST_STUDENT_LINK, '_blank') } className="cursor-pointer hover:text-green-300 flex my-10 justify-center w-1/2">
             <div className="flex items-center justify-center">
               <div className="mb-10">
                 <GiCurlyWing size={70} />
@@ -162,8 +172,8 @@ export default function ContentV2({ open }) {
               </div>
             </div>
           </div>
-
-          <div className="flex my-10 justify-center w-1/2">
+          
+          <div onClick={()=> window.open(process.env.REACT_APP_APPRECIATION_ECCS_LINK, '_blank') } className="cursor-pointer hover:text-green-300 flex my-10 justify-center w-1/2">
             <div className="flex items-center justify-center">
               <div className="mb-10">
                 <GiCurlyWing size={70} />
@@ -177,7 +187,7 @@ export default function ContentV2({ open }) {
                   Appreciation Team Tools
                 </span>
               </div>
-              <div className="flip mb-10">
+              <div ref={about} className="flip mb-10">
                 <GiCurlyWing size={70} />
               </div>
             </div>
@@ -197,7 +207,7 @@ export default function ContentV2({ open }) {
                 <div className="text-gray-300 font-medium ">MY FAVORITE</div>
                 <div className="font-semibold flex flex-col">
                   <span className=" shadow-[20px_35px_30px] shadow-gray-800 z-10">
-                    TOOLS AND{" "}
+                    TOOLS AND
                   </span>
                   <span className="z-20">TECHNOLOGY</span>
                 </div>
@@ -257,10 +267,10 @@ export default function ContentV2({ open }) {
               />
             </div>
           </div>
+          <div ref={work} ></div>
         </div>,
         false
       )}
-
       {generateSameDiv(
             <div className="w-full min-h-[600px] p-10 flex flex-col gap-10 ">
               <div className={`text-center w-full text-3xl`}>
@@ -300,10 +310,10 @@ export default function ContentV2({ open }) {
                   </div>
                 ) : null}
               </div>
+            <div ref={exp} ></div>
             </div>,
         false
       )}
-
 {generateSameDiv(
         <div className="flex flex-col gap-10 items-center">
           <div className="flex flex-col gap-5 mt-10 px-8 py-6">
@@ -341,11 +351,9 @@ export default function ContentV2({ open }) {
                 alt=""
                 className="w-full h-[400px]"
               />
-
-          <div className="flex flex-col items-center text-gray-500">
-            <span className="text-5xl font-semibold text-white">Open Source</span>
-            <span className="mt-5">This Portofolio is open source and deployed by open source software.</span>
-            <span>The code available on <span onClick={()=> window.open('https://github.com/Rovero01/Portfolio', '_blank') } className="cursor-pointer border-b border-gray-500 hover:border-white hover:text-white">GitHub</span></span>
+          <div className="flex flex-col items-center text-gray-500 gap-4">
+            <span className="text-xl text-white">See me on</span>
+            <div onClick={()=> window.open(process.env.REACT_APP_INSTAGRAM_LINK, '_blank') } className="cursor-pointer hover:text-white"> <FaInstagram size={30} /></div>
           </div>
 
         </div>,
