@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MdOutlineExpandMore } from "react-icons/md";
-import logo from '../assets/png/plus hospital.jpg'
+import logo from '../assets/png/plus_hospital.jpg'
 import { TbLayoutDashboardFilled,TbProgressCheck  } from "react-icons/tb";
 import { BsGraphUpArrow, BsPeopleFill } from "react-icons/bs";
 import { LuFiles } from "react-icons/lu";
