@@ -1,4 +1,4 @@
-import ows from "../Assets/jpg/ows.png";
+import ows from "../assets/jpg/ows.png";
 
 export default function eCommercePage() {
   return (

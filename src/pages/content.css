@@ -8,7 +8,7 @@
     font-size: 2vmin;
 }
 .myfavorite{
-  background-image: '../Assets/svg/MyFavorite.svg';
+  background-image: '../assets/svg/MyFavorite.svg';
 }
 
 @keyframes slide {
