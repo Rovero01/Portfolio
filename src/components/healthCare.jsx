@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import pms from "../Assets/jpg/pms.png";
+import pms from "../assets/jpg/pms.png";
 
 export default function ECommercePage() {
   const navigate = useNavigate();
