@@ -1,4 +1,4 @@
-import ifrit from "../assets/jpg/ifrit.jpg";
+import ifrit from "../Assets/jpg/ifrit.jpg";
 
 export default function eCommercePage() {
   return (

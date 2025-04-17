@@ -18,9 +18,9 @@ import {
   Postgre,
   Ows,
   Firebase,
-} from "../assets/png/index";
+} from "../Assets/png/index";
 
-import sjw from "../assets/jpg/sjw.png";
+import sjw from "../Assets/jpg/sjw.png";
 
 import "./content.css";
 import eCommercePage from "../components/eCommerce";

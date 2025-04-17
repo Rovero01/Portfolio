@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import sjw from "../assets/jpg/sjw.png";
+import sjw from "../Assets/jpg/sjw.png";
 
 import "./content.css";
 import eCommercePage from "../components/eCommerce";
@@ -8,11 +8,11 @@ import teleComunication from "../components/teleComunication";
 import { MdComputer, MdLocationPin } from "react-icons/md";
 import { FaReact, FaDatabase, FaShieldAlt, FaInstagram } from "react-icons/fa";
 import { GiCurlyWing } from "react-icons/gi";
-import myFavorite from "../assets/svg/MyFavorite.svg";
-import listTools from "../assets/svg/ListTools.svg";
-import MyStory from "../assets/svg/MyStory.svg";
-import GoodPeople from "../assets/svg/GoodPeople.svg";
-import Laptop from "../assets/svg/Laptop.svg";
+import myFavorite from "../Assets/svg/MyFavorite.svg";
+import listTools from "../Assets/svg/ListTools.svg";
+import MyStory from "../Assets/svg/MyStory.svg";
+import GoodPeople from "../Assets/svg/GoodPeople.svg";
+import Laptop from "../Assets/svg/Laptop.svg";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { RiFirebaseFill } from "react-icons/ri";
 import { APPRECIATION_ECCS_LINK, LINKEDIN_LINK,GITHUB_LINK,BEST_STUDENT_LINK, INSTAGRAM_LINK } from "../data/link.js";
